@@ -210,7 +210,7 @@ class PCTC_CuriosityWrapper(VecEnvWrapper):
 
         loss = self.loss_fn(y_targ, y_pred)
 
-        loss_np = loss.detach().numpy().copy()
+        loss_np = loss.detach().cpu().numpy().copy() #update for GPU
 
 
         ## 提案 報酬の計算
