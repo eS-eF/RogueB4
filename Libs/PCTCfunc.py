@@ -283,6 +283,7 @@ class PCTC_CuriosityWrapper(VecEnvWrapper):
         total_loss = 0
         for _ in range(self.gradient_steps):
             obs_batch, act_batch, rews_batch, next_obs_batch, done_mask = self.buffer.sample(self.batch_size)
+            obs_batch = obs_batch.cpu().numpy()
             obs_batch = torch.tensor(self.normalize_obs(obs_batch), dtype=torch.float32, requires_grad=False)
             y_targ = self.target_network(obs_batch).detach()
             y_pred = self.predictor_network(obs_batch)
