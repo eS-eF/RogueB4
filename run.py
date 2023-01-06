@@ -7,8 +7,6 @@ from Libs import RNDfunc, PCTCfunc, EVALfunc
 
 import logging
 import os
-import minihack
-from nle import nethack
 from collections import deque
 
 import torch
