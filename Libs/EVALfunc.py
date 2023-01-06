@@ -2,8 +2,6 @@ import logging
 import numpy as np
 import gym
 import os
-import minihack
-from nle import nethack
 from collections import deque
 
 import torch
